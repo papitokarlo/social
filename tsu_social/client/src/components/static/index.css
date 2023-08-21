@@ -1,0 +1,90 @@
+/* Header styles */
+.header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+  }
+  
+  /* Navigation styles */
+  .nav {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .nav-list {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-item {
+    font-size: 18px;
+  }
+  
+  .nav-link {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    color: #f1c40f; /* Change the color on hover */
+  }
+  
+.create-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.create-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Apply styles to the object container */
+.object-container {
+  margin: 20px;
+}
+
+.object-title {
+  margin-top: 20px;
+  font-size: 24px;
+}
+
+.object-list {
+  list-style: none;
+  padding: 0;
+}
+
+.object-item {
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin: 5px 0;
+}
+
+/* Apply styles to the "Create Group" section */
+.create {
+  margin-top: 20px;
+}
+
+.create input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.create button.create {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.create button.create:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}

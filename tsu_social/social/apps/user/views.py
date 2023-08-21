@@ -1,14 +1,14 @@
 from rest_framework.response import Response    
 from rest_framework import viewsets
 
-from user.serializer import UserSerializer
-from user.models import Users
+from apps.user.serializer import UserSerializer
+from apps.user.models import User
 
 
 # Create your views here.
 class UserViewSet(viewsets.ViewSet):
 
-    model = Users
+    model = User
     serializer = UserSerializer
 
     def list(self, request, *args, **kwargs):

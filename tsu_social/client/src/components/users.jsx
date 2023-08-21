@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import './static/index.css'; // Import your CSS file
 
 function Users() {
   const [data, setData] = useState([]);
@@ -10,7 +11,7 @@ function Users() {
 
   const responseData = async () => {
     try {
-      const response = await axios.get('http://localhost:8005/users/');
+      const response = await axios.get('http://localhost:8006/api/users/');
       const jsonData = response.data;
       setData(jsonData);
     } catch (error) {
@@ -19,11 +20,11 @@ function Users() {
   };
 
   return (
-    <div>
-      <h1>Users:</h1>
-      <ul className='list-group'>
+    <div className='object-container'>
+      <h1 className='object-title'>Users:</h1>
+      <ul className='object-list'>
         {data.map((item) => (
-          <li key={item.id} className='list-group-item'>
+          <li key={item.id} className='object-item'>
             {item.first_name} {item.last_name}
           </li>
         ))}

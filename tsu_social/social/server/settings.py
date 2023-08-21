@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'corsheaders',
     'rest_framework',
-    'user',
+    'apps',
+    'apps.user',  # Use the full path
+    'apps.groups',  # Use the full path
 ]
 
 MIDDLEWARE = [
