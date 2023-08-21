@@ -6,6 +6,7 @@ function Groups() {
   const [data, setData] = useState([]);
   const [groupName, setGroupName] = useState('');
   const [groupDescription, setGroupDescription] = useState('');
+  const [expandedGroups, setExpandedGroups] = useState([]); // Changed to an array
   const [creatingGroup, setCreatingGroup] = useState(false);
 
   useEffect(() => {
@@ -39,6 +40,14 @@ function Groups() {
     }
   };
 
+  const toggleGroupDetails = (groupId) => {
+    if (expandedGroups.includes(groupId)) {
+      setExpandedGroups(expandedGroups.filter(id => id !== groupId));
+    } else {
+      setExpandedGroups([...expandedGroups, groupId]);
+    }
+  };
+
   return (
     <div className='object-container'>
       <h1 className='object-title'>Groups</h1>
@@ -64,8 +73,17 @@ function Groups() {
       <ul className='object-list'>
         {data.map((item) => (
           <li key={item.id} className='object-item'>
-            <strong>{item.name}</strong> (Creator: {item.creator.first_name} {item.creator.last_name})
-          </li>
+          <button className='group-name-btn' onClick={() => toggleGroupDetails(item.id)}>
+            {item.name}
+          </button>
+          {expandedGroups.includes(item.id) && (
+            <div className='group-details'>
+              <p>Creator: {item.creator}</p>
+              <p>Description: {item.description}</p>
+              <p>Members Count: {item.members_count}</p>
+            </div>
+          )}
+        </li>
         ))}
       </ul>
     </div>
